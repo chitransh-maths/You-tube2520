@@ -1,12 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scholarship Merit Holders</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #00bcd4;
+      animation: slideDown 1s ease-out;
+    }
+
+    .card {
+      display: flex;
+      background-color: #1e1e1e;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 25px rgba(0, 188, 212, 0.5);
+    }
+
+    .student-photo img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-right: 3px solid #00bcd4;
+    }
+
+    .student-info {
+      padding: 20px;
+      text-align: left;
+      flex-grow: 1;
+    }
+
+    .student-info h2 {
+      margin-top: 0;
+      color: #4caf50;
+      font-size: 1.8rem;
+    }
+
+    .student-info p {
+      margin: 8px 0;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .student-photo img {
+        border-right: none;
+        border-bottom: 3px solid #00bcd4;
+      }
+
+      .student-info {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-  <p>Scholarship</p>
+  <div class="container">
+    <h1>Scholarship Merit Holders</h1>
+
+    <!-- Student Card 1 -->
+    <div class="card">
+      <div class="student-photo">
+        <img src="https://via.placeholder.com/200x200?text=Student+1" alt="Student Photo">
+      </div>
+      <div class="student-info">
+        <h2>Chitransh Ganesh Yadav</h2>
+        <p><strong>Rank:</strong> 1st</p>
+        <p><strong>Score:</strong> 98.5%</p>
+        <p><strong>School:</strong> ABC Public School</p>
+        <p><strong>District:</strong> Pune</p>
+      </div>
+    </div>
+
+    <!-- Student Card 2 -->
+    <div class="card">
+      <div class="student-photo">
+        <img src="https://via.placeholder.com/200x200?text=Student+2" alt="Student Photo">
+      </div>
+      <div class="student-info">
+        <h2>Aarushi Verma</h2>
+        <p><strong>Rank:</strong> 2nd</p>
+        <p><strong>Score:</strong> 97.8%</p>
+        <p><strong>School:</strong> Sunrise Convent</p>
+        <p><strong>District:</strong> Mumbai</p>
+      </div>
+    </div>
+
+    <!-- Add more cards here -->
+  </div>
+
+  <script>
+    // Optional animation delay for multiple cards
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.3}s`;
+    });
+  </script>
 </body>
-</html>
+  </html>
